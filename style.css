@@ -70,11 +70,6 @@ ul {
 
 .neon-border {
   border: 1px solid var(--border-color);
-  transition: var(--transition);
-}
-
-.neon-border:hover {
-  border-color: var(--accent);
 }
 
 .site-header {
@@ -131,6 +126,12 @@ ul {
   display: flex;
   align-items: center;
   gap: 36px;
+  user-select: none;
+}
+
+.nav-menu ::selection {
+  background: transparent;
+  color: inherit;
 }
 
 .nav-link {
@@ -143,23 +144,11 @@ ul {
   padding: 4px 0;
 }
 
-.nav-link:hover {
-  color: var(--accent);
-}
-
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
 .nav-link.active {
-  color: var(--accent);
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 9999px;
+  color: #cbd5e1;
 }
 
 .header-actions {
@@ -346,11 +335,6 @@ ul {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 8px;
-  transition: color 0.3s ease;
-}
-
-.project-card:hover .project-title {
-  color: var(--accent);
 }
 
 .project-text {
@@ -470,11 +454,6 @@ ul {
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-color);
-  transition: var(--transition);
-}
-
-.map-preview-box:hover {
-  border-color: var(--accent);
 }
 
 .map-image {
@@ -483,59 +462,6 @@ ul {
   object-fit: cover;
 }
 
-.map-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.map-pin-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.map-pin-circle {
-  position: relative;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background-color: var(--primary);
-  border: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.map-pin-pulse {
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--accent);
-  opacity: 0.75;
-  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.map-pin-badge {
-  margin-top: 8px;
-  padding: 3px 12px;
-  border-radius: 9999px;
-  background-color: #000000;
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  border: 1px solid var(--border-color);
-  white-space: nowrap;
-}
 
 .event-cta-container {
   text-align: center;
@@ -677,12 +603,6 @@ ul {
   letter-spacing: 0.08em;
 }
 
-@keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
 
 @media (max-width: 767.98px) {
   .site-header {
@@ -789,17 +709,11 @@ ul {
     flex-shrink: 0;
   }
 
-  .nav-link:hover {
-    color: var(--accent);
-  }
-
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link:active,
   .nav-link.active {
-    color: var(--accent);
-  }
-
-  .nav-link.active::after {
-    bottom: -9px;
-    height: 2.5px;
+    color: #cbd5e1;
   }
 }
 
